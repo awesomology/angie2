@@ -43,6 +43,27 @@
         text-shadow: 1px 1px 3px black;
       }
 
+      #poem p {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s ease forwards;
+      }
+      
+      #poem p:nth-child(1) {animation-delay: 1s;}
+      #poem p:nth-child(2) {animation-delay: 3s;}
+      #poem p:nth-child(3) {animation-delay: 5s;}
+      #poem p:nth-child(4) {animation-delay: 7s;}
+      #poem p:nth-child(5) {animation-delay: 9s;}
+      #poem p:nth-child(6) {animation-delay: 11s;}
+      #poem p:nth-child(7) {animation-delay: 13s;}
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
       #voice-btn {
         margin-top: 20px;
         padding: 10px 20px;
@@ -109,23 +130,22 @@
     </style>
   </head>
   <body>
-    <div c-+lass="container">
+    <div class="container">
       <h1>What do you call the prettiest girl in the world?</h1>
       <input type="text" id="answer" placeholder="Your answer here..." />
       <br />
       <button onclick="checkAnswer()">Unlock</button>
 
       <div id="poem">
-        <p>From sunrise light to evening’s hue,</p>
-        <p>Every moment’s magic when I’m with you.</p>
-        <p>Your smile’s the spark that lights my way,</p>
-        <p>Even when you tell jokes that make me sway.</p>
-        <p>You’re beauty and chaos, soft and bold,</p>
-        <p>With that wicked mind and heart of gold.</p>
-        <p>You tease, you flirt, you crack those lines,</p>
-        <p>Got me blushing like it’s Valentine’s.</p>
-        <p>And through it all — wild, sweet, or deep —</p>
-        <p>You’re the love I’ll always keep.</p>
+        <p>That's right, you are,</p>
+        <p>So don't nobody tell you otherwise.</p>
+        <p>And even if they do,</p>
+        <p>Just know I'm here for you.</p>
+        <p>Cause though we've only chatted a while,</p>
+        <p>All I want is to make you smile.</p>
+        <p>So I'm wishing you this way,</p>
+        <p>In hopes you'll have a Happy Birthday.</p>
+        <p>Enjoy the rest of your day, My Love❤</p>
       </div>
 
       <div id="extras">
