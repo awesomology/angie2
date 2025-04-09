@@ -106,6 +106,17 @@
         top: 0;
       }
 
+      .heart {
+        color: pink;
+        animation: pulse 1s infinite;
+      }
+
+      @keyframes pulse {
+        0% { transform: scale(1);}
+        50% { transform: scale(1.2);}
+        100% { transform: scale(1);}
+      }
+
       @keyframes fall {
         0% {
           top: -50px;
@@ -138,14 +149,14 @@
 
       <div id="poem">
         <p>That's right, you are,</p>
-        <p>So don't nobody tell you otherwise.</p>
+        <p>So don't let nobody tell you otherwise.</p>
         <p>And even if they do,</p>
         <p>Just know I'm here for you.</p>
         <p>Cause though we've only chatted a while,</p>
-        <p>All I want is to make you smile.</p>
+        <p>All I want to do is to make you smile.</p>
         <p>So I'm wishing you this way,</p>
         <p>In hopes you'll have a Happy Birthday.</p>
-        <p>Enjoy the rest of your day, My Love❤</p>
+        <p>Enjoy the rest of your day, My Love <div class="heart">❤</div></p>
       </div>
 
       <div id="extras">
