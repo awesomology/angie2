@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Angie</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: url("angie_bg.jpg") no-repeat center center fixed;
+        background-size: cover;
+        font-family: Arial, sans-serif;
+        color: white;
+        text-align: center;
+        overflow-x: hidden;
+      }
+
+      .container {
+        margin-top: 10vh;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 7vw;
+        text-shadow: 2px 2px 6px #000;
+      }
+
+      input,
+      button {
+        padding: 10px;
+        font-size: 1.2rem;
+        margin-top: 20px;
+        border: none;
+        border-radius: 8px;
+      }
+
+      #poem,
+      #extras {
+        display: none;
+        margin-top: 30px;
+        font-size: 5vw;
+        text-shadow: 1px 1px 3px black;
+      }
+
+      #voice-btn {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        color: black;
+        border: 1px solid red;
+        cursor: pointer;
+      }
+
+      .heart {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        transform: rotate(45deg);
+        top: -50px;
+        animation: fall linear infinite;
+        z-index: 5;
+      }
+
+      .heart::before,
+      .heart::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        border-radius: 50%;
+      }
+
+      .heart::before {
+        top: -10px;
+        left: 0;
+      }
+
+      .heart::after {
+        left: -10px;
+        top: 0;
+      }
+
+      @keyframes fall {
+        0% {
+          top: -50px;
+          opacity: 1;
+        }
+        100% {
+          top: 100vh;
+          opacity: 0;
+        }
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(100vh) rotate(45deg);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-10vh) rotate(45deg);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div c-+lass="container">
+      <h1>What do you call the prettiest girl in the world?</h1>
+      <input type="text" id="answer" placeholder="Your answer here..." />
+      <br />
+      <button onclick="checkAnswer()">Unlock</button>
+
+      <div id="poem">
+        <p>From sunrise light to evening’s hue,</p>
+        <p>Every moment’s magic when I’m with you.</p>
+        <p>Your smile’s the spark that lights my way,</p>
+        <p>Even when you tell jokes that make me sway.</p>
+        <p>You’re beauty and chaos, soft and bold,</p>
+        <p>With that wicked mind and heart of gold.</p>
+        <p>You tease, you flirt, you crack those lines,</p>
+        <p>Got me blushing like it’s Valentine’s.</p>
+        <p>And through it all — wild, sweet, or deep —</p>
+        <p>You’re the love I’ll always keep.</p>
+      </div>
+
+      <div id="extras">
+        <button
+          id="voice-btn"
+          onclick="document.getElementById('voice').play()"
+        >
+          Hear my voice
+        </button>
+        <audio
+          id="voice"
+          src="Dynasty (Official Music Video) ｜ MIIA.mp3"
+        ></audio>
+      </div>
+    </div>
+
+    <audio autoplay loop>
+      <source src="2phutfunk.mp3" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- Falling hearts -->
+    <script>
+      function checkAnswer() {
+        const answer = document.getElementById("answer").value.toLowerCase();
+        if (answer === "angie") {
+          document.getElementById("poem").style.display = "block";
+          document.getElementById("extras").style.display = "block";
+          for (let i = 0; i < 30; i++) {
+            createHeart();
+          }
+        }
+        if (answer === "engel") {
+          document.getElementById("poem").style.display = "block";
+          document.getElementById("extras").style.display = "block";
+          for (let i = 0; i < 30; i++) {
+            createHeart();
+          }
+        }
+        if (answer === "engelique") {
+          document.getElementById("poem").style.display = "block";
+          document.getElementById("extras").style.display = "block";
+          for (let i = 0; i < 30; i++) {
+            createHeart();
+          }
+        }
+        if (answer === "angie-bear") {
+          document.getElementById("poem").style.display = "block";
+          document.getElementById("extras").style.display = "block";
+          for (let i = 0; i < 30; i++) {
+            createHeart();
+          }
+        }
+         else {
+          alert("Nope... try again, my queen.");
+        }
+      }
+
+      function createHeart() {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = 5 + Math.random() * 5 + "s";
+        document.body.appendChild(heart);
+        setTimeout(() => {
+          heart.remove();
+        }, 10000);
+      }
+    </script>
+  </body>
+</html>
